@@ -45,6 +45,24 @@ cp .env.sample .env.local
 
 Then, open `.env.local` and fill in the required variables.
 
+### GitHub Token (`GITHUB_TOKEN`)
+
+The `GITHUB_TOKEN` is used by the backfill scripts to read historical repository events via the GitHub API. It is **read-only** — no write permissions are needed.
+
+Create a [fine-grained Personal Access Token](https://github.com/settings/tokens?type=beta) (recommended) or a [classic PAT](https://github.com/settings/tokens) with the following permissions:
+
+**Fine-grained PAT** (recommended):
+- **Repository permissions → Contents**: Read-only
+- **Repository permissions → Pull requests**: Read-only
+- **Repository permissions → Checks**: Read-only
+- **Repository permissions → Metadata**: Read-only (automatically selected)
+
+**Classic PAT**:
+- `public_repo` — read public repositories (commits, PRs, releases, file contents)
+- `read:user` — read starred-repository lists for subscription sync
+
+> Tip: Restrict the fine-grained token to only the repositories you intend to backfill for better security.
+
 ## Getting Started
 
 ### 1. Install dependencies
