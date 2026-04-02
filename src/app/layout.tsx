@@ -99,6 +99,14 @@ export default function RootLayout({
                   <div className="flex flex-row items-center gap-2">
                     <NavigationMenuItem>
                       <NavigationMenuLink
+                        href="/top-voted"
+                        className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                      >
+                        🔥 Top Voted
+                      </NavigationMenuLink>
+                    </NavigationMenuItem>
+                    <NavigationMenuItem>
+                      <NavigationMenuLink
                         href={GITHUB_URL}
                         target="_blank"
                         rel="noopener noreferrer"
